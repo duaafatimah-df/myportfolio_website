@@ -13,9 +13,9 @@ export const Experience: React.FC = () => {
   const experiences: Job[] = [
     {
       role: 'Freelance Frontend & Web Developer',
-      company: 'Kwork (Self-Employed)',
+      company: 'Self-Employed',
       location: 'Remote',
-      duration: '2024 – Present (2 Years)',
+      duration: '2025 – Present (1 Year)',
       badge: 'Freelance',
       highlights: [
         'Successfully delivered diverse web projects for clients in React.js, HTML5/CSS3, and WordPress ecosystems.',

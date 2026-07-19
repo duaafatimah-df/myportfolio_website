@@ -62,7 +62,7 @@ export const Hero: React.FC<HeroProps> = ({ onNavClick }) => {
         </h1>
         
         <p className="hero-desc">
-          An ambitious Software Engineering graduate and experienced Freelance Frontend Developer with 2+ years of hands-on experience translating complex Figma designs into highly responsive, pixel-perfect, and user-centric web applications.
+          An ambitious Software Engineering graduate and experienced Freelance Frontend Developer with 1 year of hands-on experience translating complex Figma designs into highly responsive, pixel-perfect, and user-centric web applications.
         </p>
         
         <div className="hero-actions">
