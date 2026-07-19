@@ -46,7 +46,7 @@ export const Experience: React.FC = () => {
         <span className="section-tag">Career History</span>
         <h2 className="section-title">Professional Experience</h2>
         <p className="section-desc">
-          Over 2 years of freelancing and corporate internship experience delivering functional web applications.
+          Over 1 year of freelancing and corporate internship experience delivering functional web applications.
         </p>
       </div>
 

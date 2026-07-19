@@ -19,26 +19,20 @@ export const Hero: React.FC<HeroProps> = ({ onNavClick }) => {
 
     const handleType = () => {
       if (!isDeleting) {
-        // Typing
         setCurrentText(fullText.substring(0, currentText.length + 1));
         setTypingSpeed(100);
-
         if (currentText === fullText) {
-          // Pause at full word
           timer = setTimeout(() => setIsDeleting(true), 2000);
           return;
         }
       } else {
-        // Deleting
         setCurrentText(fullText.substring(0, currentText.length - 1));
         setTypingSpeed(50);
-
         if (currentText === '') {
           setIsDeleting(false);
           setCurrentTitleIndex((prev) => (prev + 1) % titles.length);
         }
       }
-
       timer = setTimeout(handleType, typingSpeed);
     };
 
@@ -56,8 +50,9 @@ export const Hero: React.FC<HeroProps> = ({ onNavClick }) => {
           Hi, I'm <br />
           <span className="gradient-text">Duaa Fatimah</span>
           <br />
-          <span style={{ fontSize: '2.5rem', fontWeight: 600, color: 'var(--text-secondary)' }}>
-            I am a <span style={{ color: 'var(--primary)', borderRight: '2px solid var(--primary)', paddingRight: '4px' }}>{currentText}</span>
+          {/* clamp: min 1.1rem on tiny phones → scales with screen → max 2.5rem on desktop */}
+          <span className="typing-line">
+            I am a <span className="typing-cursor">{currentText}</span>
           </span>
         </h1>
         

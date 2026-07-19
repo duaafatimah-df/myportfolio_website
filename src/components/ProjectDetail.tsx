@@ -221,7 +221,7 @@ export const ProjectDetail: React.FC<ProjectDetailProps> = ({ projectId, onBack 
   };
 
   return (
-    <section className="project-detail-section" style={{ paddingTop: '120px', maxWidth: '1000px', margin: '0 auto', textAlign: 'left' }}>
+    <section className="project-detail-section" style={{ paddingTop: 'clamp(90px, 15vw, 140px)', maxWidth: '1000px', margin: '0 auto', textAlign: 'left', padding: 'clamp(90px, 15vw, 140px) 20px 40px', boxSizing: 'border-box', width: '100%' }}>
       {/* Back button */}
       <button onClick={onBack} className="btn btn-secondary" style={{ marginBottom: '32px', display: 'inline-flex', alignItems: 'center' }}>
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{ marginRight: '8px' }}>
@@ -232,9 +232,9 @@ export const ProjectDetail: React.FC<ProjectDetailProps> = ({ projectId, onBack 
       </button>
 
       {/* Project Title and Header */}
-      <div style={{ marginBottom: '32px' }}>
+      <div style={{ marginBottom: '24px' }}>
         <span className="section-tag" style={{ marginBottom: '12px' }}>{project.category}</span>
-        <h1 style={{ fontSize: '3rem', fontFamily: 'var(--display)', marginBottom: '16px', lineHeight: '1.2' }}>{project.title}</h1>
+        <h1 style={{ fontSize: 'clamp(1.4rem, 4vw, 3rem)', fontFamily: 'var(--display)', marginBottom: '16px', lineHeight: '1.2' }}>{project.title}</h1>
         <div style={{ display: 'flex', gap: '8px', flexWrap: 'wrap', marginBottom: '24px' }}>
           {project.tags.map((tag, idx) => (
             <span className={`project-tag ${idx % 2 === 0 ? 'teal' : ''}`} key={idx} style={{ fontSize: '0.85rem', padding: '6px 14px' }}>

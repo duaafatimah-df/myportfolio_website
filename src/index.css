@@ -45,8 +45,13 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+html {
+  overflow-x: hidden;
+}
+
 body {
   overflow-x: hidden;
+  max-width: 100vw;
   background-image: 
     radial-gradient(circle at 10% 20%, rgba(139, 92, 246, 0.12) 0%, transparent 40%),
     radial-gradient(circle at 90% 80%, rgba(0, 245, 212, 0.08) 0%, transparent 40%),
@@ -272,7 +277,7 @@ section {
 }
 
 .section-title {
-  font-size: 2.5rem;
+  font-size: clamp(1.5rem, 4vw, 2.5rem);
   color: var(--text-primary);
   margin-bottom: 16px;
 }
@@ -281,16 +286,19 @@ section {
   color: var(--text-secondary);
   max-width: 600px;
   margin: 0 auto;
-  font-size: 1.1rem;
+  font-size: clamp(0.9rem, 2.5vw, 1.1rem);
   line-height: 1.6;
 }
 
 /* Mobile Adjustments */
 @media (max-width: 768px) {
   section {
-    padding: 40px 16px;
+    padding: 30px 16px;
   }
   .section-title {
-    font-size: 2rem;
+    font-size: 1.6rem;
+  }
+  .hero-subtitle {
+    font-size: 0.85rem;
   }
 }
