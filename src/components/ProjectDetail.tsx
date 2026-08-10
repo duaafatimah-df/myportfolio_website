@@ -5,6 +5,12 @@ import spareshareImg from '../assets/project_spareshare.png';
 import deenncoImg from '../assets/project_deennco.png';
 import nexusImg from '../assets/project_nexus.png';
 import ecommerceImg from '../assets/project_ecommerce.jpg';
+import growthagencyImg from '../assets/project_growthagency.png';
+
+// Import Growth Agency screenshots
+import growth1 from '../assets/all projects/growth1.png';
+import growth2 from '../assets/all projects/growth2.png';
+import growth3 from '../assets/all projects/growth3.png';
 
 // Import MovieVerse Flutter screenshots
 import mv1 from '../assets/all projects/f1.png';
@@ -49,6 +55,28 @@ export const ProjectDetail: React.FC<ProjectDetailProps> = ({ projectId, onBack 
     objectives?: string[];
     features: string[];
   }> = {
+    growthagency: {
+      title: 'Growth Agency — Digital Marketing & AI Platform (Ongoing)',
+      category: 'React & Marketing Engineering',
+      tags: ['React.js', 'Meta CAPI', 'AI Automation', 'Tailwind CSS', 'Performance Marketing', 'Ongoing'],
+      description: 'Decoding Growth. Engineering Impact. A high-conversion digital marketing & AI automation agency platform built for performance scaling in Pakistan & globally.',
+      longDescription: 'Growth Agency is an ongoing digital marketing and web engineering platform built with React.js. It combines high-conversion performance marketing strategies with custom AI automation workflows, Meta CAPI data pipelines, and ultra-fast web engineering to scale brands in Pakistan and globally.',
+      images: [growthagencyImg, growth1, growth2, growth3],
+      techStack: {
+        'Frontend Framework': 'React.js + Tailwind CSS',
+        'Data Pipelines': 'Meta Conversions API (CAPI) & Google Analytics 4',
+        'AI Automation': 'Custom Lead Qualifier & AI Workflow Triggers',
+        'Performance Analytics': 'GrowthOS v4.2 Real-Time Engine',
+        'Status': 'Ongoing Development'
+      },
+      features: [
+        'Decoding Growth, Engineering Impact hero architecture.',
+        'GrowthOS v4.2 Live Campaign Engine dashboard interface.',
+        'Real-time metrics: PKR 48.2M managed spend, 99.8% match rate, 2,480 AI qualified leads.',
+        'Engineered services grid covering Performance Marketing, AI Automation, Brand Strategy & SEO.',
+        'Fully responsive modern dark glassmorphism UI/UX design.'
+      ]
+    },
     spareshare: {
       title: 'SpareShare AI — AI-Powered Community Platform',
       category: 'React & AI',

@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import spareshareImg from '../assets/project_spareshare.png';
 import deenncoImg from '../assets/project_deennco.png';
 import nexusImg from '../assets/project_nexus.png';
+import growthagencyImg from '../assets/project_growthagency.png';
 import mfaImg from '../assets/project_mfa.jpg';
 import movieverseImg from '../assets/1.JPG';
 import ecommerceImg from '../assets/project_ecommerce.jpg';
@@ -25,6 +26,14 @@ export const Projects: React.FC<ProjectsProps> = ({ onSelectProject }) => {
   const [activeFilter, setActiveFilter] = useState('all');
 
   const projectsList: Project[] = [
+    {
+      id: 'growthagency',
+      title: 'Growth Agency — Digital Marketing & AI Platform (Ongoing)',
+      category: 'react',
+      tags: ['React.js', 'Meta CAPI', 'AI Automation', 'Tailwind CSS', 'Ongoing Project'],
+      description: 'Decoding Growth. Engineering Impact. Combining high-conversion performance marketing with custom AI automation, Meta CAPI pipelines, and fast React web engineering.',
+      image: growthagencyImg
+    },
     {
       id: 'spareshare',
       title: 'SpareShare AI — AI-Powered Community Platform',
@@ -90,7 +99,7 @@ export const Projects: React.FC<ProjectsProps> = ({ onSelectProject }) => {
         <span className="section-tag">Portfolio Showcase</span>
         <h2 className="section-title">Selected Projects</h2>
         <p className="section-desc">
-          Explore a selection of my mobile apps, full-stack React systems, WordPress sites, and security modules.
+          Explore a selection of my mobile apps, full-stack React systems, WordPress sites, digital marketing agency platforms, and security modules.
         </p>
       </div>
 
@@ -109,40 +118,46 @@ export const Projects: React.FC<ProjectsProps> = ({ onSelectProject }) => {
 
       {/* Projects Grid */}
       <div className="projects-grid">
-        {filteredProjects.map((project, idx) => (
-          <div className="project-card glass glass-hover" key={idx} style={{ cursor: 'pointer' }} onClick={() => onSelectProject(project.id)}>
+        {filteredProjects.map((project) => (
+          <div key={project.id} className="project-card glass glass-hover">
             <div className="project-img-box">
               <img src={project.image} alt={project.title} className="project-img" />
+              <div className="project-overlay">
+                <button 
+                  className="btn btn-primary"
+                  onClick={() => onSelectProject(project.id)}
+                >
+                  View Case Study
+                </button>
+              </div>
             </div>
-            
-            <div className="project-content">
+
+            <div className="project-info">
               <div className="project-tags">
-                {project.tags.map((tag, tIdx) => (
-                  <span className={`project-tag ${tIdx % 2 === 0 ? 'teal' : ''}`} key={tIdx}>
+                {project.tags.slice(0, 3).map((tag, idx) => (
+                  <span key={idx} className="project-tag">
                     {tag}
                   </span>
                 ))}
               </div>
-              
               <h3 className="project-title">{project.title}</h3>
               <p className="project-desc">{project.description}</p>
               
-              <div className="project-links" onClick={(e) => e.stopPropagation()}>
-                <button onClick={() => onSelectProject(project.id)} className="project-link" style={{ background: 'none', border: 'none', cursor: 'pointer', color: 'var(--primary)', padding: 0 }}>
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ marginRight: '6px' }}>
-                    <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
-                    <circle cx="12" cy="12" r="3"></circle>
-                  </svg>
-                  View Details
+              <div className="project-links">
+                <button 
+                  className="btn-link"
+                  onClick={() => onSelectProject(project.id)}
+                >
+                  Learn More &rarr;
                 </button>
                 {project.liveLink && (
-                  <a href={project.liveLink} target="_blank" rel="noopener noreferrer" className="project-link">
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                      <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
-                      <polyline points="15 3 21 3 21 9"></polyline>
-                      <line x1="10" y1="14" x2="21" y2="3"></line>
-                    </svg>
-                    Live Link
+                  <a 
+                    href={project.liveLink} 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="btn-link live-btn"
+                  >
+                    Live Demo ↗
                   </a>
                 )}
               </div>
