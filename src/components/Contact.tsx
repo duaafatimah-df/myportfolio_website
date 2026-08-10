@@ -143,7 +143,7 @@ export const Contact: React.FC = () => {
                 id="name"
                 name="name"
                 className="form-input"
-                placeholder="John Doe"
+                placeholder="Enter your full name"
                 value={formState.name}
                 onChange={handleChange}
                 required
@@ -157,7 +157,7 @@ export const Contact: React.FC = () => {
                 id="email"
                 name="email"
                 className="form-input"
-                placeholder="john@example.com"
+                placeholder="Enter your email address"
                 value={formState.email}
                 onChange={handleChange}
                 required
@@ -171,7 +171,7 @@ export const Contact: React.FC = () => {
                 id="subject"
                 name="subject"
                 className="form-input"
-                placeholder="Project Discussion"
+                placeholder="Enter the subject of your message"
                 value={formState.subject}
                 onChange={handleChange}
               />
@@ -183,7 +183,7 @@ export const Contact: React.FC = () => {
                 id="message"
                 name="message"
                 className="form-input"
-                placeholder="Your message details..."
+                placeholder="Enter your message..."
                 value={formState.message}
                 onChange={handleChange}
                 required

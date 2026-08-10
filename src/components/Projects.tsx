@@ -118,24 +118,21 @@ export const Projects: React.FC<ProjectsProps> = ({ onSelectProject }) => {
 
       {/* Projects Grid */}
       <div className="projects-grid">
-        {filteredProjects.map((project) => (
-          <div key={project.id} className="project-card glass glass-hover">
+        {filteredProjects.map((project, idx) => (
+          <div 
+            className="project-card glass glass-hover" 
+            key={idx} 
+            style={{ cursor: 'pointer' }} 
+            onClick={() => onSelectProject(project.id)}
+          >
             <div className="project-img-box">
               <img src={project.image} alt={project.title} className="project-img" />
-              <div className="project-overlay">
-                <button 
-                  className="btn btn-primary"
-                  onClick={() => onSelectProject(project.id)}
-                >
-                  View Case Study
-                </button>
-              </div>
             </div>
 
-            <div className="project-info">
+            <div className="project-content">
               <div className="project-tags">
-                {project.tags.slice(0, 3).map((tag, idx) => (
-                  <span key={idx} className="project-tag">
+                {project.tags.map((tag, tIdx) => (
+                  <span className={`project-tag ${tIdx % 2 === 0 ? 'teal' : ''}`} key={tIdx}>
                     {tag}
                   </span>
                 ))}
@@ -143,21 +140,32 @@ export const Projects: React.FC<ProjectsProps> = ({ onSelectProject }) => {
               <h3 className="project-title">{project.title}</h3>
               <p className="project-desc">{project.description}</p>
               
-              <div className="project-links">
+              <div className="project-links" onClick={(e) => e.stopPropagation()}>
                 <button 
-                  className="btn-link"
-                  onClick={() => onSelectProject(project.id)}
+                  onClick={() => onSelectProject(project.id)} 
+                  className="project-link" 
+                  style={{ background: 'none', border: 'none', cursor: 'pointer', color: 'var(--primary)', padding: 0, display: 'inline-flex', alignItems: 'center' }}
                 >
-                  Learn More &rarr;
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ marginRight: '6px' }}>
+                    <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                    <circle cx="12" cy="12" r="3"></circle>
+                  </svg>
+                  View Details
                 </button>
                 {project.liveLink && (
                   <a 
                     href={project.liveLink} 
                     target="_blank" 
-                    rel="noopener noreferrer"
-                    className="btn-link live-btn"
+                    rel="noopener noreferrer" 
+                    className="project-link"
+                    style={{ display: 'inline-flex', alignItems: 'center', marginLeft: '16px' }}
                   >
-                    Live Demo ↗
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ marginRight: '6px' }}>
+                      <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                      <polyline points="15 3 21 3 21 9"></polyline>
+                      <line x1="10" y1="14" x2="21" y2="3"></line>
+                    </svg>
+                    Live Link
                   </a>
                 )}
               </div>
