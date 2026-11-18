@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720" fill="none">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1280" y2="720" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#1a2e1f"/>
+      <stop offset="0.55" stop-color="#243528"/>
+      <stop offset="1" stop-color="#3d2a1a"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="180" y1="140" x2="900" y2="560" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#e8a87c"/>
+      <stop offset="1" stop-color="#7d9b76"/>
+    </linearGradient>
+  </defs>
+  <rect width="1280" height="720" fill="url(#bg)"/>
+  <circle cx="1080" cy="120" r="220" fill="#e8a87c" fill-opacity="0.08"/>
+  <circle cx="160" cy="580" r="260" fill="#7d9b76" fill-opacity="0.12"/>
+  <rect x="96" y="96" width="1088" height="528" rx="28" stroke="#f3efe7" stroke-opacity="0.12" stroke-width="2"/>
+  <text x="140" y="220" fill="#e8a87c" font-family="Georgia, serif" font-size="28" letter-spacing="6">ORGANIZATIONAL SITE</text>
+  <text x="140" y="320" fill="#f3efe7" font-family="Georgia, serif" font-size="92" font-weight="700">VOC-WEB</text>
+  <text x="140" y="390" fill="#c9c2b5" font-family="Arial, sans-serif" font-size="28">Multi-page React platform · Programs · CMS · Contact</text>
+  <rect x="140" y="450" width="180" height="44" rx="8" fill="url(#accent)"/>
+  <text x="168" y="479" fill="#0f0e0c" font-family="Arial, sans-serif" font-size="18" font-weight="700">React · Vite · Tailwind</text>
+</svg>

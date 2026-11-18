@@ -3,7 +3,6 @@ import React from 'react';
 interface Job {
   role: string;
   company: string;
-  location: string;
   duration: string;
   badge: string;
   highlights: string[];
@@ -11,73 +10,62 @@ interface Job {
 
 export const Experience: React.FC = () => {
   const experiences: Job[] = [
-    {
-      role: 'Freelance Frontend & Web Developer',
-      company: 'Self-Employed',
-      location: 'Remote',
-      duration: '2025 – Present (1 Year)',
-      badge: 'Freelance',
-      highlights: [
-        'Successfully delivered diverse web projects for clients in React.js, HTML5/CSS3, and WordPress ecosystems.',
-        'Transformed complex Figma designs into clean, responsive, and cross-browser-compatible frontend code using Tailwind CSS.',
-        'Developed custom WordPress websites, executing advanced theme customization, plugin integrations, and custom styling to meet tailored business needs.',
-        'Managed end-to-end project lifecycles, ensuring timely delivery, effective client communication, and post-deployment support.'
-      ]
-    },
+
     {
       role: 'Frontend Developer Intern',
       company: 'DevelopersHub Corporation',
-      location: 'Pakistan',
-      duration: '6 Weeks (Summer Internship)',
+      duration: '6 Weeks · Summer Internship',
       badge: 'Internship',
       highlights: [
-        'Collaborated within a professional ecosystem to build modular, reusable, and interactive user interfaces using modern frontend standards.',
-        'Translated design requirements into highly responsive layouts, ensuring cross-browser compatibility and seamless device responsiveness.',
-        'Utilized Git and GitHub for team version control, maintaining clean production-ready code under rigorous professional evaluation.'
-      ]
-    }
+        'Collaborated to build modular, reusable, and interactive user interfaces using modern frontend standards.',
+        'Translated design requirements into responsive layouts with cross-browser compatibility.',
+        'Used Git and GitHub for team version control and production-ready code quality.',
+      ],
+    },
+    {
+      role: 'Full Stack Intern',
+      company: 'SolaceBit ',
+      duration: '6 Weeks · Oct 2026',
+      badge: 'Internship',
+      highlights: [
+        'Built full-stack web features for scalable applications using modern frontend and backend practices.',
+        'Delivered responsive, production-ready UI while collaborating remotely with the engineering team.',
+        'Maintained clean Git/GitHub workflows and met timelines under professional review.',
+      ],
+    },
   ];
 
   return (
     <section id="experience">
-      <div className="glow-blur glow-cyan" style={{ bottom: '20%', left: '-10%' }}></div>
-      
-      <div className="section-header">
-        <span className="section-tag">Career History</span>
-        <h2 className="section-title">Professional Experience</h2>
-        <p className="section-desc">
-          Over 1 year of freelancing and corporate internship experience delivering functional web applications.
+      <div className="section-head reveal">
+        <span className="section-kicker">Career</span>
+        <h2 className="section-title">Experience</h2>
+        <p className="section-copy">
+          Full-stack and frontend internships focused on shipping usable interfaces under real team workflows.
         </p>
       </div>
 
-      <div className="timeline-wrapper">
-        <div className="timeline-line"></div>
-        
+      <div className="exp-list">
         {experiences.map((exp, idx) => (
-          <div className="timeline-item" key={idx}>
-            <div className="timeline-dot"></div>
-            <div className="timeline-card glass glass-hover">
-              <div className="timeline-header">
-                <div>
-                  <h3 className="timeline-role">{exp.role}</h3>
-                  <div className="timeline-company-row">
-                    <span className="timeline-company">{exp.company}</span>
-                    <span className="timeline-badge">{exp.badge}</span>
-                  </div>
-                </div>
-                <div className="timeline-date">{exp.duration}</div>
-              </div>
-              
-              <ul className="timeline-desc">
-                {exp.highlights.map((highlight, hIdx) => (
-                  <li key={hIdx}>{highlight}</li>
+          <article className={`exp-card panel reveal reveal-delay-${(idx % 3) + 1}`} key={exp.role}>
+            <div className="exp-meta">
+              <div className="exp-date">{exp.duration}</div>
+              <span className="exp-badge">{exp.badge}</span>
+            </div>
+            <div>
+              <h3 className="exp-role">{exp.role}</h3>
+              <p className="exp-company">{exp.company}</p>
+              <ul className="exp-points">
+                {exp.highlights.map((item) => (
+                  <li key={item}>{item}</li>
                 ))}
               </ul>
             </div>
-          </div>
+          </article>
         ))}
       </div>
     </section>
   );
 };
+
 export default Experience;
